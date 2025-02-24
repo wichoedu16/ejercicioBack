@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "cf0ecd9e-d309-4252-b638-17a241c3f657",
+		"name": "Banco API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26215092"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Crear Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Juan Lema\",\n\t\"identificacion\": \"12345623\",\n\t\"direccion\": \"Otavalo sn y principal\",\n\t\"telefono\": \"098254785\",\n\t\"password\": \"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cliente ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cliente Cedula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/clientes/cedula/1234567891"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Jose Lema Actualizado\",\n\t\"direccion\": \"Nueva Dirección\",\n\t\"telefono\": \"098254785\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/clientes/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "Crear Cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"numeroCuenta\": \"412335\",\n\t\"tipoCuenta\": \"Ahorro\",\n\t\"saldoInicial\": -20.00,\n\t\"clienteId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/cuentas"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/cuentas/numero/4123315"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cuenta Cedula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/cuentas/cliente/1234567891"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Cuentas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/cuentas"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tipoCuenta\": \"Corriente\",\n\t\"estado\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/cuentas/478758"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/cuentas/478758"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Realizar Movimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"numeroCuenta\": \"478758\",\n\t\"valor\": -5.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/movimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Movimiento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/movimientos/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Movimientos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/movimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "Reporte por Fechas",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fechaInicio\": \"2010-02-01\",\n  \"fechaFin\": \"2025-02-28\",\n  \"identificacion\": \"1234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/reportes"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
